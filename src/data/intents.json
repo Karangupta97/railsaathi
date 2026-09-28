@@ -1,0 +1,238 @@
+{
+  "_comment": "DRAFT seed knowledge base for RailSaathi. All content is draft and MUST be reviewed against official RPF / GRP / Indian Railways sources before launch. Helpline numbers are placeholders: RPF 182, Railway helpline 139, GRP Mumbai 1512, national emergency 112 // VERIFY every number.",
+  "topics": [
+    {
+      "id": "theft",
+      "title": "Theft of phone or belongings",
+      "patterns": [
+        "someone stole my phone",
+        "my phone was stolen",
+        "phone snatched",
+        "chain snatching",
+        "wallet stolen",
+        "bag stolen",
+        "pickpocket",
+        "theft on train",
+        "फोन चोरी",
+        "मोबाइल चोरी",
+        "किसी ने मेरा फोन चुरा लिया",
+        "चोरी हो गया",
+        "फोन चोरला",
+        "मोबाइल चोरी झाला",
+        "चोरी झाली"
+      ],
+      "answer": {
+        "en": "If your phone or belongings were stolen:\n\n1. Move to a safe, crowded spot or the next station.\n2. Tell the **RPF** on **182** or **GRP Mumbai** on **1512**. At a station, find the RPF/GRP post.\n3. Note the train number, coach, time and direction; it helps recovery.\n4. Block your SIM and bank apps from another phone.\n5. File a complaint so you get a report number for insurance or a new SIM.\n\nFor a general railway complaint you can also call **139**.",
+        "hi": "अगर आपका फोन या सामान चोरी हो गया है:\n\n1. किसी सुरक्षित, भीड़ वाली जगह या अगले स्टेशन पर जाएँ।\n2. **RPF** को **182** या **GRP मुंबई** को **1512** पर बताएँ। स्टेशन पर RPF/GRP चौकी पर जाएँ।\n3. ट्रेन नंबर, कोच, समय और दिशा नोट करें; इससे सामान वापस मिलने में मदद मिलती है।\n4. दूसरे फोन से अपना सिम और बैंक ऐप ब्लॉक करें।\n5. शिकायत दर्ज करें ताकि बीमा या नए सिम के लिए रिपोर्ट नंबर मिल जाए।\n\nसामान्य रेलवे शिकायत के लिए **139** पर भी कॉल कर सकते हैं।",
+        "mr": "तुमचा फोन किंवा सामान चोरीला गेल्यास:\n\n1. सुरक्षित, गर्दीच्या ठिकाणी किंवा पुढच्या स्टेशनवर जा.\n2. **RPF** ला **182** किंवा **GRP मुंबई** ला **1512** वर कळवा. स्टेशनवर RPF/GRP चौकीवर जा.\n3. ट्रेन क्रमांक, डबा, वेळ आणि दिशा नोंदवा; यामुळे सामान परत मिळण्यास मदत होते.\n4. दुसऱ्या फोनवरून तुमचे सिम आणि बँक अ‍ॅप्स ब्लॉक करा.\n5. तक्रार नोंदवा म्हणजे विमा किंवा नवीन सिमसाठी अहवाल क्रमांक मिळेल.\n\nसामान्य रेल्वे तक्रारीसाठी **139** वर देखील कॉल करू शकता."
+      },
+      "source": "RPF / GRP theft reporting guidance (draft)",
+      "followups": {
+        "en": ["How do I file a report?", "How do I block my SIM?", "What details should I note?"],
+        "hi": ["शिकायत कैसे दर्ज करें?", "सिम कैसे ब्लॉक करें?", "कौन सी जानकारी नोट करूँ?"],
+        "mr": ["तक्रार कशी नोंदवायची?", "सिम कसे ब्लॉक करायचे?", "कोणती माहिती नोंदवावी?"]
+      }
+    },
+    {
+      "id": "harassment",
+      "title": "Harassment on the train",
+      "patterns": [
+        "harassment on the train",
+        "being harassed",
+        "someone is harassing me",
+        "eve teasing",
+        "molested",
+        "groping",
+        "inappropriate touching",
+        "man following me",
+        "छेड़छाड़",
+        "परेशान कर रहा है",
+        "कोई मुझे परेशान कर रहा है",
+        "पीछा कर रहा है",
+        "छेडछाड",
+        "त्रास देत आहे",
+        "पाठलाग करत आहे"
+      ],
+      "answer": {
+        "en": "If someone is harassing you:\n\n1. If you feel unsafe right now, call **112**.\n2. Move towards other people, or into the ladies' coach if you are a woman travelling alone.\n3. Alert the **RPF** on **182** or **GRP** on **1512**; give the train number and coach.\n4. Ask fellow passengers for help. Speaking up loudly often stops the behaviour.\n5. At the next station, report to the RPF/GRP post so it is on record.\n\nYou have not done anything wrong. Reporting helps protect you and others.",
+        "hi": "अगर कोई आपको परेशान कर रहा है:\n\n1. अगर अभी असुरक्षित महसूस हो रहा है, तो **112** पर कॉल करें।\n2. दूसरे लोगों के पास जाएँ, या अकेली यात्रा कर रही महिला हैं तो महिला डिब्बे में जाएँ।\n3. **RPF** को **182** या **GRP** को **1512** पर सूचित करें; ट्रेन नंबर और कोच बताएँ।\n4. साथी यात्रियों से मदद माँगें। ज़ोर से बोलने पर अक्सर ऐसा व्यवहार रुक जाता है।\n5. अगले स्टेशन पर RPF/GRP चौकी पर रिपोर्ट करें ताकि रिकॉर्ड में आ जाए।\n\nआपकी कोई गलती नहीं है। रिपोर्ट करने से आपकी और दूसरों की सुरक्षा होती है।",
+        "mr": "कोणी तुम्हाला त्रास देत असल्यास:\n\n1. आत्ता असुरक्षित वाटत असेल तर **112** वर कॉल करा.\n2. इतर लोकांजवळ जा, किंवा एकट्या प्रवास करणाऱ्या महिला असाल तर महिला डब्यात जा.\n3. **RPF** ला **182** किंवा **GRP** ला **1512** वर कळवा; ट्रेन क्रमांक व डबा सांगा.\n4. सहप्रवाशांची मदत घ्या. मोठ्याने बोलल्याने असे वर्तन अनेकदा थांबते.\n5. पुढच्या स्टेशनवर RPF/GRP चौकीवर तक्रार नोंदवा म्हणजे नोंद होईल.\n\nतुमची काही चूक नाही. तक्रार केल्याने तुमचे व इतरांचे संरक्षण होते."
+      },
+      "source": "RPF women safety / GRP guidance (draft)",
+      "followups": {
+        "en": ["Where is the ladies' coach?", "How do I report it later?", "What if he follows me off the train?"],
+        "hi": ["महिला डिब्बा कहाँ है?", "बाद में रिपोर्ट कैसे करूँ?", "अगर वह उतरकर भी पीछा करे तो?"],
+        "mr": ["महिला डबा कुठे आहे?", "नंतर तक्रार कशी नोंदवायची?", "तो उतरूनही पाठलाग करत असेल तर?"]
+      }
+    },
+    {
+      "id": "helplines",
+      "title": "Emergency helpline numbers",
+      "patterns": [
+        "emergency helpline numbers",
+        "helpline numbers",
+        "emergency numbers",
+        "who do i call",
+        "railway helpline",
+        "police number",
+        "rpf number",
+        "grp number",
+        "आपातकालीन नंबर",
+        "हेल्पलाइन नंबर",
+        "किसे कॉल करूँ",
+        "आपत्कालीन क्रमांक",
+        "हेल्पलाईन क्रमांक",
+        "कोणाला कॉल करू"
+      ],
+      "answer": {
+        "en": "Key numbers for Mumbai local train travel:\n\n1. **112** National emergency (police, fire, ambulance).\n2. **182** RPF (Railway Protection Force) security helpline.\n3. **139** Railway helpline (Rail Madad) for enquiries and complaints.\n4. **1512** GRP Mumbai (Government Railway Police).\n\nIf you are in immediate danger, call **112** first. Save these numbers in your phone.",
+        "hi": "मुंबई लोकल यात्रा के मुख्य नंबर:\n\n1. **112** राष्ट्रीय आपातकाल (पुलिस, दमकल, एम्बुलेंस)।\n2. **182** RPF (रेलवे सुरक्षा बल) सुरक्षा हेल्पलाइन।\n3. **139** रेलवे हेल्पलाइन (रेल मदद) पूछताछ और शिकायत के लिए।\n4. **1512** GRP मुंबई (रेलवे पुलिस)।\n\nतुरंत खतरे में हों तो पहले **112** पर कॉल करें। ये नंबर अपने फोन में सेव कर लें।",
+        "mr": "मुंबई लोकल प्रवासासाठी महत्त्वाचे क्रमांक:\n\n1. **112** राष्ट्रीय आपत्कालीन (पोलीस, अग्निशमन, रुग्णवाहिका).\n2. **182** RPF (रेल्वे सुरक्षा दल) सुरक्षा हेल्पलाईन.\n3. **139** रेल्वे हेल्पलाईन (रेल मदद) चौकशी व तक्रारींसाठी.\n4. **1512** GRP मुंबई (रेल्वे पोलीस).\n\nतात्काळ धोक्यात असाल तर आधी **112** वर कॉल करा. हे क्रमांक फोनमध्ये जतन करा."
+      },
+      "source": "Indian Railways / RPF / GRP published helplines (draft, to verify)",
+      "followups": {
+        "en": ["When should I call 112 vs 182?", "How do I report theft?", "What if I'm being harassed?"],
+        "hi": ["112 या 182 कब कॉल करूँ?", "चोरी की रिपोर्ट कैसे करूँ?", "अगर परेशान किया जाए तो?"],
+        "mr": ["112 की 182 कधी कॉल करू?", "चोरीची तक्रार कशी करू?", "त्रास होत असेल तर?"]
+      }
+    },
+    {
+      "id": "footboard",
+      "title": "Footboard travel",
+      "patterns": [
+        "footboard travel",
+        "travelling on footboard",
+        "hanging from the door",
+        "standing at the door",
+        "is footboard travel safe",
+        "फुटबोर्ड",
+        "दरवाजे पर लटकना",
+        "दरवाज्यात उभे राहणे",
+        "फूटबोर्ड प्रवास"
+      ],
+      "answer": {
+        "en": "Footboard travel is a leading cause of train deaths and injuries. Please avoid it.\n\n1. Stand well inside, away from the doorway, and hold a handrail.\n2. Let crowded trains pass and board the next one if you can.\n3. Watch for poles, platforms and oncoming trains, which are the main dangers.\n4. Never lean out or hang from the door, even briefly.\n\nReaching a few minutes later is far better than a serious injury.",
+        "hi": "फुटबोर्ड यात्रा ट्रेन में मौत और चोट का बड़ा कारण है। कृपया इससे बचें।\n\n1. दरवाजे से दूर, अंदर की ओर खड़े हों और हैंडरेल पकड़ें।\n2. भीड़ वाली ट्रेन जाने दें और हो सके तो अगली ट्रेन लें।\n3. खंभों, प्लेटफॉर्म और सामने से आती ट्रेनों से सावधान रहें, यही मुख्य खतरे हैं।\n4. दरवाजे से बाहर झुकें या लटकें नहीं, चाहे थोड़ी देर के लिए ही क्यों न हो।\n\nकुछ मिनट देर से पहुँचना गंभीर चोट से कहीं बेहतर है।",
+        "mr": "फुटबोर्ड प्रवास हे ट्रेनमधील मृत्यू व दुखापतींचे मोठे कारण आहे. कृपया तो टाळा.\n\n1. दरवाजापासून दूर, आत उभे राहा आणि हॅंडरेल धरा.\n2. गर्दीची ट्रेन जाऊ द्या आणि शक्य असल्यास पुढची ट्रेन घ्या.\n3. खांब, प्लॅटफॉर्म व समोरून येणाऱ्या ट्रेनकडे लक्ष द्या, हेच मुख्य धोके आहेत.\n4. दरवाजातून बाहेर वाकू नका किंवा लटकू नका, थोड्या वेळासाठीही नाही.\n\nकाही मिनिटे उशिरा पोहोचणे गंभीर दुखापतीपेक्षा खूप चांगले."
+      },
+      "source": "Railway safety advisories on footboard travel (draft)",
+      "followups": {
+        "en": ["How do I board a crowded train safely?", "What are peak hours?", "Which coach is least crowded?"],
+        "hi": ["भीड़ वाली ट्रेन में सुरक्षित कैसे चढ़ें?", "पीक ऑवर्स क्या हैं?", "कौन सा डिब्बा कम भीड़ वाला है?"],
+        "mr": ["गर्दीच्या ट्रेनमध्ये सुरक्षित कसे चढायचे?", "गर्दीचे तास कोणते?", "कोणता डबा कमी गर्दीचा असतो?"]
+      }
+    },
+    {
+      "id": "overcrowding",
+      "title": "Overcrowding and boarding safely",
+      "patterns": [
+        "overcrowding",
+        "crowded train",
+        "too crowded",
+        "peak hours",
+        "off peak",
+        "how to board a crowded train",
+        "rush hour",
+        "भीड़",
+        "भीड़ वाली ट्रेन",
+        "पीक ऑवर",
+        "गर्दी",
+        "गर्दीची ट्रेन"
+      ],
+      "answer": {
+        "en": "For crowded Mumbai locals:\n\n1. If a train is dangerously packed, wait for the next one; they run often.\n2. Stand inside and hold a handrail; keep bags in front of you.\n3. Move towards the centre, away from the doors, before your stop is near.\n4. If you can, travel just outside peak hours (roughly the morning and evening office rush) for more space.\n5. Keep your phone and wallet secure in a zipped inner pocket.\n\nTell me your usual time and I can suggest safer options.",
+        "hi": "भीड़ वाली मुंबई लोकल के लिए:\n\n1. अगर ट्रेन खतरनाक रूप से भरी है, तो अगली का इंतज़ार करें; ये बार-बार आती हैं।\n2. अंदर खड़े हों और हैंडरेल पकड़ें; बैग सामने रखें।\n3. अपने स्टॉप से पहले दरवाजे से हटकर बीच की ओर जाएँ।\n4. हो सके तो पीक ऑवर्स (सुबह-शाम की ऑफिस भीड़) से थोड़ा पहले या बाद में यात्रा करें।\n5. फोन और वॉलेट को ज़िप वाली अंदरूनी जेब में सुरक्षित रखें।\n\nअपना सामान्य समय बताएँ, मैं सुरक्षित विकल्प सुझा सकता हूँ।",
+        "mr": "गर्दीच्या मुंबई लोकलसाठी:\n\n1. ट्रेन धोकादायकरीत्या भरली असेल तर पुढची ट्रेन थांबा; त्या वारंवार येतात.\n2. आत उभे राहा आणि हॅंडरेल धरा; बॅग समोर ठेवा.\n3. तुमचा थांबा येण्याआधी दरवाजापासून दूर मध्यभागी सरका.\n4. शक्य असल्यास गर्दीच्या तासांच्या (सकाळ-संध्याकाळची ऑफिस गर्दी) थोडे आधी किंवा नंतर प्रवास करा.\n5. फोन व पाकीट झिप असलेल्या आतल्या खिशात सुरक्षित ठेवा.\n\nतुमची नेहमीची वेळ सांगा, मी अधिक सुरक्षित पर्याय सुचवू शकतो."
+      },
+      "source": "Mumbai suburban travel safety guidance (draft)",
+      "followups": {
+        "en": ["Peak hours", "Off-peak hours", "How do I avoid pickpockets?"],
+        "hi": ["पीक ऑवर्स", "ऑफ-पीक समय", "जेबकतरों से कैसे बचूँ?"],
+        "mr": ["गर्दीचे तास", "गर्दी नसलेले तास", "खिसेकापूंपासून कसे वाचायचे?"]
+      }
+    },
+    {
+      "id": "lost-belongings",
+      "title": "Lost belongings",
+      "patterns": [
+        "lost belongings",
+        "i lost my bag",
+        "left my bag on the train",
+        "lost luggage",
+        "forgot my bag",
+        "left phone on train",
+        "सामान खो गया",
+        "बैग ट्रेन में छूट गया",
+        "खोया हुआ सामान",
+        "सामान हरवले",
+        "बॅग ट्रेनमध्ये विसरली"
+      ],
+      "answer": {
+        "en": "If you lost or left something on the train:\n\n1. Note the train number, coach and where you were sitting.\n2. Report it on the railway helpline **139** and at the station's lost property or RPF office.\n3. If it may have been stolen, also tell the **GRP** on **1512**.\n4. Keep any ticket or pass; it helps identify your journey.\n5. Ask for a reference number so you can follow up.\n\nFound items are often handed in, so it is worth reporting quickly.",
+        "hi": "अगर ट्रेन में कुछ खो गया या छूट गया:\n\n1. ट्रेन नंबर, कोच और आप कहाँ बैठे थे, यह नोट करें।\n2. रेलवे हेल्पलाइन **139** पर और स्टेशन के लॉस्ट प्रॉपर्टी या RPF ऑफिस में रिपोर्ट करें।\n3. अगर चोरी की आशंका है, तो **GRP** को **1512** पर भी बताएँ।\n4. टिकट या पास संभालकर रखें; इससे यात्रा पहचानने में मदद मिलती है।\n5. रेफरेंस नंबर माँगें ताकि आप फॉलो-अप कर सकें।\n\nमिली हुई चीज़ें अक्सर जमा करा दी जाती हैं, इसलिए जल्दी रिपोर्ट करना अच्छा है।",
+        "mr": "ट्रेनमध्ये काही हरवले किंवा राहिले तर:\n\n1. ट्रेन क्रमांक, डबा आणि तुम्ही कुठे बसला होता ते नोंदवा.\n2. रेल्वे हेल्पलाईन **139** वर आणि स्टेशनच्या लॉस्ट प्रॉपर्टी किंवा RPF कार्यालयात तक्रार करा.\n3. चोरीची शक्यता असल्यास **GRP** ला **1512** वर देखील कळवा.\n4. तिकीट किंवा पास जपून ठेवा; प्रवास ओळखण्यास मदत होते.\n5. संदर्भ क्रमांक मागा म्हणजे पाठपुरावा करता येईल.\n\nसापडलेल्या वस्तू अनेकदा जमा केल्या जातात, त्यामुळे लवकर तक्रार करणे चांगले."
+      },
+      "source": "Railway lost property / Rail Madad guidance (draft)",
+      "followups": {
+        "en": ["How do I use Rail Madad?", "What if it was stolen?", "How long are items kept?"],
+        "hi": ["रेल मदद कैसे इस्तेमाल करूँ?", "अगर चोरी हुई हो तो?", "सामान कितने दिन रखा जाता है?"],
+        "mr": ["रेल मदद कसे वापरायचे?", "चोरी झाली असेल तर?", "वस्तू किती दिवस ठेवतात?"]
+      }
+    },
+    {
+      "id": "monsoon",
+      "title": "Monsoon disruptions",
+      "patterns": [
+        "monsoon disruptions",
+        "trains delayed rain",
+        "waterlogging",
+        "flooding on tracks",
+        "heavy rain train",
+        "monsoon safety",
+        "मानसून",
+        "बारिश में ट्रेन",
+        "पानी भरना",
+        "पावसाळा",
+        "पावसात ट्रेन",
+        "पाणी साचणे"
+      ],
+      "answer": {
+        "en": "During heavy monsoon rain:\n\n1. Check for delays before leaving; services can slow or stop when tracks flood.\n2. Do not walk on flooded tracks or cross between platforms through water; the depth and current are hard to judge.\n3. Stay under shelter on the platform, away from the edge, which can be slippery.\n4. Keep some cash and a charged phone; digital networks can be patchy.\n5. Follow announcements and staff instructions.\n\nFor live updates and complaints, the railway helpline is **139**.",
+        "hi": "भारी मानसून बारिश के दौरान:\n\n1. निकलने से पहले देरी की जानकारी लें; पटरियों में पानी भरने पर सेवाएँ धीमी या बंद हो सकती हैं।\n2. पानी भरी पटरियों पर न चलें और पानी में से प्लेटफॉर्म पार न करें; गहराई और बहाव का अंदाज़ा मुश्किल है।\n3. प्लेटफॉर्म पर छत के नीचे, किनारे से दूर रहें, जो फिसलन भरा हो सकता है।\n4. कुछ नकद और चार्ज किया हुआ फोन रखें; डिजिटल नेटवर्क कमज़ोर हो सकता है।\n5. घोषणाओं और स्टाफ के निर्देशों का पालन करें।\n\nलाइव अपडेट और शिकायत के लिए रेलवे हेल्पलाइन **139** है।",
+        "mr": "जोरदार पावसाळ्यात:\n\n1. निघण्याआधी विलंबाची माहिती घ्या; रुळांवर पाणी साचल्यास सेवा मंदावू किंवा थांबू शकतात.\n2. पाणी साचलेल्या रुळांवर चालू नका व पाण्यातून प्लॅटफॉर्म ओलांडू नका; खोली व प्रवाहाचा अंदाज कठीण असतो.\n3. प्लॅटफॉर्मवर छताखाली, कडेपासून दूर राहा, कारण तिथे निसरडे असू शकते.\n4. थोडी रोकड व चार्ज केलेला फोन ठेवा; डिजिटल नेटवर्क कमजोर असू शकते.\n5. घोषणा व कर्मचाऱ्यांच्या सूचनांचे पालन करा.\n\nथेट अपडेट व तक्रारींसाठी रेल्वे हेल्पलाईन **139** आहे."
+      },
+      "source": "Monsoon travel advisories, Mumbai suburban (draft)",
+      "followups": {
+        "en": ["How do I check for delays?", "Is it safe to travel now?", "What if the train stops between stations?"],
+        "hi": ["देरी कैसे पता करूँ?", "क्या अभी यात्रा सुरक्षित है?", "ट्रेन बीच में रुक जाए तो?"],
+        "mr": ["विलंब कसा तपासायचा?", "आता प्रवास सुरक्षित आहे का?", "ट्रेन स्टेशनांच्या मध्ये थांबली तर?"]
+      }
+    },
+    {
+      "id": "late-night",
+      "title": "Late-night travel safety",
+      "patterns": [
+        "safety tips for late-night travel",
+        "late night travel",
+        "travelling at night",
+        "night train safety",
+        "empty compartment at night",
+        "देर रात यात्रा",
+        "रात में सफर",
+        "रात्री प्रवास",
+        "उशिरा रात्री प्रवास"
+      ],
+      "answer": {
+        "en": "For late-night travel on Mumbai locals:\n\n1. Sit in a coach with other people, ideally near the guard's coach; avoid empty compartments.\n2. Women travelling alone should use the ladies' coach, which is monitored.\n3. Share your live location with someone you trust and note your expected arrival.\n4. Keep the **RPF 182** number ready and stay aware of the emergency alarm and exits.\n5. On the platform, wait in well-lit areas near staff.\n\nIf anything feels wrong, call **112** or **182** without hesitating.",
+        "hi": "मुंबई लोकल में देर रात यात्रा के लिए:\n\n1. ऐसे डिब्बे में बैठें जहाँ और लोग हों, हो सके तो गार्ड के डिब्बे के पास; खाली डिब्बों से बचें।\n2. अकेली यात्रा कर रही महिलाएँ महिला डिब्बे का उपयोग करें, जिस पर निगरानी होती है।\n3. अपनी लाइव लोकेशन किसी भरोसेमंद व्यक्ति के साथ शेयर करें और पहुँचने का अनुमानित समय बताएँ।\n4. **RPF 182** नंबर तैयार रखें और इमरजेंसी अलार्म व निकास पर ध्यान रखें।\n5. प्लेटफॉर्म पर स्टाफ के पास, अच्छी रोशनी वाली जगह रुकें।\n\nकुछ भी गलत लगे तो बिना हिचकिचाए **112** या **182** पर कॉल करें।",
+        "mr": "मुंबई लोकलमध्ये उशिरा रात्रीच्या प्रवासासाठी:\n\n1. इतर लोक असलेल्या डब्यात बसा, शक्यतो गार्डच्या डब्याजवळ; रिकामे डबे टाळा.\n2. एकट्या प्रवास करणाऱ्या महिलांनी महिला डबा वापरावा, त्यावर देखरेख असते.\n3. तुमचे लाइव्ह लोकेशन विश्वासू व्यक्तीसोबत शेअर करा आणि पोहोचण्याची अपेक्षित वेळ सांगा.\n4. **RPF 182** क्रमांक तयार ठेवा आणि आपत्कालीन अलार्म व बाहेर पडण्याच्या जागांकडे लक्ष ठेवा.\n5. प्लॅटफॉर्मवर कर्मचाऱ्यांजवळ, चांगल्या उजेडाच्या ठिकाणी थांबा.\n\nकाही चुकीचे वाटल्यास न घाबरता **112** किंवा **182** वर कॉल करा."
+      },
+      "source": "RPF / GRP night travel safety guidance (draft)",
+      "followups": {
+        "en": ["Where is the ladies' coach?", "How do I use the emergency alarm?", "Which stations are staffed at night?"],
+        "hi": ["महिला डिब्बा कहाँ है?", "इमरजेंसी अलार्म कैसे उपयोग करूँ?", "रात में कौन से स्टेशन पर स्टाफ होता है?"],
+        "mr": ["महिला डबा कुठे आहे?", "आपत्कालीन अलार्म कसा वापरायचा?", "रात्री कोणत्या स्टेशनवर कर्मचारी असतात?"]
+      }
+    }
+  ]
+}
