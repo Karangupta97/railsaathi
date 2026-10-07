@@ -1,8 +1,9 @@
 "use client";
 
 import { Fragment } from "react";
-import type { Feedback, Message } from "@/lib/chat-types";
+import type { Feedback, LanguageCode, Message } from "@/lib/chat-types";
 import type { ChatStrings } from "@/lib/i18n";
+import { LANGUAGES } from "@/lib/languages";
 import { MessageBubble } from "./MessageBubble";
 import { SuggestionChips } from "./SuggestionChips";
 
@@ -20,25 +21,33 @@ const TIME_GAP_MS = 4 * 60 * 1000;
 export function MessageList({
   messages,
   strings,
+  currentLang,
   onSend,
   onRetry,
   onCancel,
   onFeedback,
+  onTranslate,
 }: {
   messages: readonly Message[];
   strings: ChatStrings;
+  currentLang: LanguageCode;
   onSend: (text: string) => void;
   onRetry: () => void;
   onCancel: () => void;
   onFeedback: (id: string, feedback: Feedback) => void;
+  onTranslate: (id: string) => void;
 }) {
   const lastAssistantId = [...messages].reverse().find((m) => m.role === "assistant")?.id;
 
   return (
     <div role="log" aria-live="polite" aria-label={strings.pageTitle} className="flex flex-col">
       {messages.map((message, index) => {
+        if (message.role === "notice") {
+          return <NoticeDivider key={message.id} message={message} strings={strings} />;
+        }
+
         const prev = messages[index - 1];
-        const showDivider = prev && message.createdAt - prev.createdAt > TIME_GAP_MS;
+        const showDivider = prev && prev.role !== "notice" && message.createdAt - prev.createdAt > TIME_GAP_MS;
         const sameSenderAsPrev = prev?.role === message.role && !showDivider;
         const isLastAssistant = message.id === lastAssistantId;
         const showFollowUps =
@@ -52,10 +61,12 @@ export function MessageList({
                 <MessageBubble
                   message={message}
                   strings={strings}
+                  currentLang={currentLang}
                   isLast={message.id === messages[messages.length - 1]?.id}
                   onRetry={onRetry}
                   onCancel={onCancel}
                   onFeedback={onFeedback}
+                  onTranslate={onTranslate}
                 />
               </div>
 
@@ -73,6 +84,18 @@ export function MessageList({
           </Fragment>
         );
       })}
+    </div>
+  );
+}
+
+/** Centred "Language changed to X" divider. */
+function NoticeDivider({ message, strings }: { message: Message; strings: ChatStrings }) {
+  const langLabel = message.noticeLang ? LANGUAGES[message.noticeLang].label : "";
+  return (
+    <div className="my-4 flex items-center gap-3 text-xs text-muted">
+      <span className="h-px flex-1 bg-border" />
+      <span>{strings.languageChangedTo(langLabel)}</span>
+      <span className="h-px flex-1 bg-border" />
     </div>
   );
 }

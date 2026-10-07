@@ -27,9 +27,6 @@ export const TOPICS: readonly Topic[] = (intentsData as IntentsFile).topics;
 
 export type RetrievalResult = { topic: Topic; score: number };
 
-/** Below this best score we treat the query as out of scope (no LLM call). */
-export const RELEVANCE_THRESHOLD = 0.16;
-
 const TOKEN_SPLIT = /[^\p{L}\p{N}]+/u;
 
 /** English stop words only; Devanagari terms are content-bearing here. */

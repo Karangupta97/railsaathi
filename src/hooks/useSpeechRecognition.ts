@@ -114,14 +114,27 @@ export function useSpeechRecognition({ language, onFinalTranscript }: Options) {
     else start();
   }, [status, start, stop]);
 
-  // Stop when the language changes mid-session; the caller can restart.
+  // When the language changes mid-session, restart recognition with the new
+  // locale if it was currently listening; otherwise just stop cleanly.
   const languageCode = language.code;
+  const didMountRef = useRef(false);
   useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return; // skip the initial mount
+    }
+    const wasActive = recognitionRef.current !== null;
     if (recognitionRef.current) {
       manualStopRef.current = true;
       recognitionRef.current.abort();
+      recognitionRef.current = null;
     }
-  }, [languageCode]);
+    if (wasActive) {
+      // Restart on the next tick so the previous instance fully tears down.
+      const t = setTimeout(() => start(), 60);
+      return () => clearTimeout(t);
+    }
+  }, [languageCode, start]);
 
   // Clean up on unmount.
   useEffect(() => {

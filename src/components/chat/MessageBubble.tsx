@@ -1,13 +1,14 @@
 "use client";
 
 import { memo, useState } from "react";
-import { Check, Copy, RotateCcw, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react";
+import { Check, Copy, Languages, RotateCcw, ThumbsDown, ThumbsUp, TriangleAlert } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { cn } from "@/lib/cn";
-import type { Feedback, Message } from "@/lib/chat-types";
+import type { Feedback, LanguageCode, Message } from "@/lib/chat-types";
 import type { ChatStrings } from "@/lib/i18n";
 import { RichText } from "./RichText";
 import { ThinkingIndicator } from "./ThinkingIndicator";
+import { TrainResultCard } from "./TrainResultCard";
 
 /**
  * A single chat bubble. Memoised so streaming one message doesn't re-render the
@@ -16,22 +17,26 @@ import { ThinkingIndicator } from "./ThinkingIndicator";
 type Props = {
   message: Message;
   strings: ChatStrings;
+  currentLang: LanguageCode;
   isLast: boolean;
   onRetry: () => void;
   onCancel: () => void;
   onFeedback: (id: string, feedback: Feedback) => void;
+  onTranslate: (id: string) => void;
 };
 
-function MessageBubbleImpl({ message, strings, isLast, onRetry, onCancel, onFeedback }: Props) {
+function MessageBubbleImpl({ message, strings, currentLang, isLast, onRetry, onCancel, onFeedback, onTranslate }: Props) {
   if (message.role === "user") return <UserBubble message={message} />;
   if (message.status === "error") return <ErrorBubble message={message} strings={strings} onRetry={onRetry} />;
   return (
     <AssistantBubble
       message={message}
       strings={strings}
+      currentLang={currentLang}
       isLast={isLast}
       onCancel={onCancel}
       onFeedback={onFeedback}
+      onTranslate={onTranslate}
     />
   );
 }
@@ -49,18 +54,27 @@ function UserBubble({ message }: { message: Message }) {
 function AssistantBubble({
   message,
   strings,
+  currentLang,
   isLast,
   onCancel,
   onFeedback,
+  onTranslate,
 }: {
   message: Message;
   strings: ChatStrings;
+  currentLang: LanguageCode;
   isLast: boolean;
   onCancel: () => void;
   onFeedback: (id: string, feedback: Feedback) => void;
+  onTranslate: (id: string) => void;
 }) {
   const thinking = message.status === "thinking" && message.content.length === 0;
   const streaming = message.status === "streaming";
+
+  // Show a translation if one is active for this message.
+  const shown = message.shownLang;
+  const displayText = shown && message.translations?.[shown] ? message.translations[shown]! : message.content;
+  const isTranslated = Boolean(shown && shown !== message.lang && message.translations?.[shown]);
 
   return (
     <div className="flex items-start gap-2.5">
@@ -73,20 +87,33 @@ function AssistantBubble({
             <ThinkingIndicator strings={strings} stage={message.stage} onCancel={onCancel} />
           ) : (
             <div className="break-words">
-              <RichText text={message.content} />
+              <RichText text={displayText} />
               {streaming && (
                 <span
                   aria-hidden="true"
                   className="ml-0.5 inline-block h-[1.05em] w-[2px] translate-y-[2px] bg-primary [animation:var(--animate-caret)]"
                 />
               )}
+              {isTranslated && <span className="mt-2 block text-xs text-muted">{strings.translatedNote}</span>}
               {message.stopped && <span className="mt-2 block text-xs text-muted">{strings.stopped}</span>}
             </div>
           )}
         </div>
 
+        {/* Structured train results (from the [[TRAINS]] trailer). */}
+        {message.status === "done" && message.trains && (
+          <TrainResultCard payload={message.trains} strings={strings} />
+        )}
+
         {message.status === "done" && (
-          <AssistantActions message={message} strings={strings} isLast={isLast} onFeedback={onFeedback} />
+          <AssistantActions
+            message={message}
+            strings={strings}
+            currentLang={currentLang}
+            isLast={isLast}
+            onFeedback={onFeedback}
+            onTranslate={onTranslate}
+          />
         )}
       </div>
     </div>
@@ -96,25 +123,36 @@ function AssistantBubble({
 function AssistantActions({
   message,
   strings,
+  currentLang,
   isLast,
   onFeedback,
+  onTranslate,
 }: {
   message: Message;
   strings: ChatStrings;
+  currentLang: LanguageCode;
   isLast: boolean;
   onFeedback: (id: string, feedback: Feedback) => void;
+  onTranslate: (id: string) => void;
 }) {
   const [copied, setCopied] = useState(false);
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(message.content);
+      const shown = message.shownLang;
+      const text = shown && message.translations?.[shown] ? message.translations[shown]! : message.content;
+      await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
       // Clipboard blocked (insecure context): silently ignore.
     }
   };
+
+  const translating = message.translating === true;
+  // Offer Translate only when the current language differs from the reply's language.
+  const canTranslate = currentLang !== message.lang;
+  const isShowingTranslation = message.shownLang !== undefined && message.shownLang !== message.lang;
 
   return (
     <div
@@ -141,6 +179,17 @@ function AssistantActions({
       >
         <ThumbsDown className="size-4" aria-hidden="true" />
       </ActionButton>
+      {(canTranslate || isShowingTranslation) && (
+        <button
+          type="button"
+          onClick={() => onTranslate(message.id)}
+          disabled={translating}
+          className="ml-1 inline-flex h-9 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-muted transition-colors hover:bg-surface-muted hover:text-foreground disabled:opacity-60"
+        >
+          <Languages className="size-3.5" aria-hidden="true" />
+          {translating ? strings.translating : isShowingTranslation ? strings.showOriginal : strings.translate}
+        </button>
+      )}
     </div>
   );
 }

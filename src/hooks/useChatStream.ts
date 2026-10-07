@@ -21,7 +21,7 @@ export type StreamCallbacks = {
   onUrgency: () => void;
   onFirstToken: () => void;
   onText: (text: string) => void;
-  onDone: (result: { text: string; followUps: string[]; followUpKind: "suggestions" | "choices" }) => void;
+  onDone: (result: import("@/lib/chat-protocol").ParsedStream) => void;
   onError: (kind: ChatErrorKind) => void;
   onAbort: (partialText: string) => void;
 };

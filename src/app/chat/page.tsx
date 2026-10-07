@@ -7,10 +7,7 @@ export const metadata: Metadata = {
   description: "Ask RailSaathi about safety, helplines or a situation on Mumbai local trains.",
 };
 
-/**
- * /chat is a server component that mounts the client ChatShell. Everything
- * interactive lives inside ChatShell; the page stays a thin server boundary.
- */
+/** /chat = a fresh conversation. The URL becomes /chat/[id] on the first send. */
 export default function ChatPage() {
   return <ChatShell />;
 }

@@ -87,3 +87,40 @@ function subscribeOnline(callback: () => void) {
 export function useOnline(): boolean {
   return useSyncExternalStore(subscribeOnline, () => navigator.onLine, () => true);
 }
+
+// ---------- Sidebar collapse ----------
+const SIDEBAR_KEY = "railsaathi:sidebar";
+const SIDEBAR_EVENT = "railsaathi:sidebar-change";
+
+function subscribeSidebar(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener(SIDEBAR_EVENT, callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(SIDEBAR_EVENT, callback);
+  };
+}
+
+/** Persisted desktop sidebar open/closed state (defaults to open). */
+export function useSidebarOpen(): boolean {
+  return useSyncExternalStore(
+    subscribeSidebar,
+    () => {
+      try {
+        return window.localStorage.getItem(SIDEBAR_KEY) !== "closed";
+      } catch {
+        return true;
+      }
+    },
+    () => true,
+  );
+}
+
+export function setSidebarOpen(open: boolean) {
+  try {
+    window.localStorage.setItem(SIDEBAR_KEY, open ? "open" : "closed");
+  } catch {
+    // Ignore.
+  }
+  window.dispatchEvent(new Event(SIDEBAR_EVENT));
+}

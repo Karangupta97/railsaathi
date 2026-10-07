@@ -1,0 +1,44 @@
+{
+  "_comment": "SAMPLE timetable data for development. Real data is loaded by scripts/sync-timetable.ts from RailRadar into this file. Times are SCHEDULED, not live. Stations cover part of the Western line; trips are a few clearly-marked SAMPLE services so the chat tools work before a full sync.",
+  "meta": {
+    "source_name": "RailRadar (unofficial) — SAMPLE seed",
+    "source_url": "https://railradar.in",
+    "effective_from": null,
+    "last_updated": "2026-01-01T00:00:00.000Z"
+  },
+  "stations": [
+    { "id": "CCG", "code": "CCG", "name_en": "Churchgate", "name_hi": "चर्चगेट", "name_mr": "चर्चगेट", "aliases": ["church gate"], "line": "western", "seq": 1, "lat": 18.93449, "lng": 72.82729 },
+    { "id": "MEL", "code": "MEL", "name_en": "Marine Lines", "name_hi": "मरीन लाइन्स", "name_mr": "मरीन लाईन्स", "aliases": [], "line": "western", "seq": 2, "lat": 18.9455, "lng": 72.8237 },
+    { "id": "MRU", "code": "MRU", "name_en": "Matunga Road", "name_hi": "माटुंगा रोड", "name_mr": "माटुंगा रोड", "aliases": ["matunga rd"], "line": "western", "seq": 8, "lat": 19.02816, "lng": 72.84699 },
+    { "id": "DDR", "code": "DDR", "name_en": "Dadar", "name_hi": "दादर", "name_mr": "दादर", "aliases": ["dadar western", "dadar wr"], "line": "western", "seq": 9, "lat": 19.01888, "lng": 72.84299 },
+    { "id": "BA", "code": "BA", "name_en": "Bandra", "name_hi": "बांद्रा", "name_mr": "वांद्रे", "aliases": ["bandra", "vandre", "bandra wr"], "line": "western", "seq": 14, "lat": 19.05417, "lng": 72.84126 },
+    { "id": "ADH", "code": "ADH", "name_en": "Andheri", "name_hi": "अंधेरी", "name_mr": "अंधेरी", "aliases": ["andheri wr"], "line": "western", "seq": 19, "lat": 19.11874, "lng": 72.84692 },
+    { "id": "BVI", "code": "BVI", "name_en": "Borivali", "name_hi": "बोरीवली", "name_mr": "बोरिवली", "aliases": ["borivli", "borivali wr"], "line": "western", "seq": 26, "lat": 19.2307, "lng": 72.8567 },
+    { "id": "BYR", "code": "BYR", "name_en": "Bhayandar", "name_hi": "भायंदर", "name_mr": "भाईंदर", "aliases": ["bhayander"], "line": "western", "seq": 31, "lat": 19.3009, "lng": 72.8514 },
+    { "id": "VR", "code": "VR", "name_en": "Virar", "name_hi": "विरार", "name_mr": "विरार", "aliases": [], "line": "western", "seq": 38, "lat": 19.4559, "lng": 72.8114 },
+    { "id": "MMCT", "code": "MMCT", "name_en": "Mumbai Central", "name_hi": "मुंबई सेंट्रल", "name_mr": "मुंबई सेंट्रल", "aliases": ["bombay central", "mumbai central local", "bct"], "line": "western", "seq": 4, "lat": 18.9691, "lng": 72.8194 }
+  ],
+  "trips": [
+    { "id": "S90002", "line": "western", "direction": "down", "service_type": "slow", "day_type": "weekday", "origin_station_id": "ADH", "destination_station_id": "CCG", "cars": 12, "name": "Andheri - Churchgate Local (SAMPLE)" },
+    { "id": "S90101", "line": "western", "direction": "up", "service_type": "slow", "day_type": "weekday", "origin_station_id": "CCG", "destination_station_id": "VR", "cars": 12, "name": "Churchgate - Virar Local (SAMPLE)" },
+    { "id": "S90201", "line": "western", "direction": "up", "service_type": "fast", "day_type": "weekday", "origin_station_id": "DDR", "destination_station_id": "BVI", "cars": 15, "name": "Dadar - Borivali Fast (SAMPLE)" }
+  ],
+  "stop_times": [
+    { "trip_id": "S90201", "station_id": "DDR", "arrival": null, "departure": "09:10", "arrival_day": 0, "departure_day": 0, "platform": "5", "seq": 1 },
+    { "trip_id": "S90201", "station_id": "BA", "arrival": "09:16", "departure": "09:16", "arrival_day": 0, "departure_day": 0, "platform": "3", "seq": 2 },
+    { "trip_id": "S90201", "station_id": "ADH", "arrival": "09:24", "departure": "09:24", "arrival_day": 0, "departure_day": 0, "platform": "4", "seq": 3 },
+    { "trip_id": "S90201", "station_id": "BVI", "arrival": "09:38", "departure": null, "arrival_day": 0, "departure_day": 0, "platform": "2", "seq": 4 },
+
+    { "trip_id": "S90101", "station_id": "CCG", "arrival": null, "departure": "23:40", "arrival_day": 0, "departure_day": 0, "platform": "3", "seq": 1 },
+    { "trip_id": "S90101", "station_id": "DDR", "arrival": "23:55", "departure": "23:55", "arrival_day": 0, "departure_day": 0, "platform": "2", "seq": 2 },
+    { "trip_id": "S90101", "station_id": "BA", "arrival": "00:02", "departure": "00:02", "arrival_day": 1, "departure_day": 1, "platform": "2", "seq": 3 },
+    { "trip_id": "S90101", "station_id": "ADH", "arrival": "00:12", "departure": "00:12", "arrival_day": 1, "departure_day": 1, "platform": "4", "seq": 4 },
+    { "trip_id": "S90101", "station_id": "BVI", "arrival": "00:28", "departure": "00:28", "arrival_day": 1, "departure_day": 1, "platform": "3", "seq": 5 },
+    { "trip_id": "S90101", "station_id": "VR", "arrival": "00:55", "departure": null, "arrival_day": 1, "departure_day": 1, "platform": "1", "seq": 6 },
+
+    { "trip_id": "S90002", "station_id": "ADH", "arrival": null, "departure": "04:05", "arrival_day": 0, "departure_day": 0, "platform": "4", "seq": 1 },
+    { "trip_id": "S90002", "station_id": "BA", "arrival": "04:19", "departure": "04:19", "arrival_day": 0, "departure_day": 0, "platform": "3", "seq": 2 },
+    { "trip_id": "S90002", "station_id": "DDR", "arrival": "04:28", "departure": "04:28", "arrival_day": 0, "departure_day": 0, "platform": "2", "seq": 3 },
+    { "trip_id": "S90002", "station_id": "CCG", "arrival": "04:50", "departure": null, "arrival_day": 0, "departure_day": 0, "platform": "3", "seq": 4 }
+  ]
+}

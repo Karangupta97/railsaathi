@@ -1,18 +1,16 @@
 "use client";
 
-import Link from "next/link";
-import { SquarePen } from "lucide-react";
-import { Logo } from "@/components/Logo";
+import { PanelLeftOpen, SquarePen } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import type { ChatStrings } from "@/lib/i18n";
 import type { LanguageCode } from "@/lib/languages";
-import { SITE_NAME } from "@/lib/site";
 import { EmergencyButton } from "./EmergencyButton";
 import { LanguageSelect } from "./LanguageSelect";
 
 /**
- * Minimal chat header (no shared Navbar exists yet): logo + wordmark, New chat,
- * language selector, theme toggle and the always-visible Emergency button.
+ * Chat top bar. Left side has the sidebar controls: a collapse/expand toggle on
+ * desktop (shown when the sidebar is collapsed) and a history/drawer button on
+ * mobile. Right side keeps language, theme and the always-visible Emergency.
  */
 export function ChatHeader({
   strings,
@@ -20,37 +18,53 @@ export function ChatHeader({
   onLanguageChange,
   onNewChat,
   canClear,
+  sidebarOpen,
+  onToggleSidebar,
+  onOpenDrawer,
 }: {
   strings: ChatStrings;
   language: LanguageCode;
   onLanguageChange: (code: LanguageCode) => void;
   onNewChat: () => void;
   canClear: boolean;
+  sidebarOpen: boolean;
+  onToggleSidebar: () => void;
+  onOpenDrawer: () => void;
 }) {
   return (
     <header className="glass z-30 border-b border-border">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-2 px-4">
-        <Link href="/" className="flex items-center gap-2 rounded-lg pr-1 font-display font-bold text-foreground">
-          <Logo size={28} />
-          <span className="text-lg tracking-tight">{SITE_NAME}</span>
-        </Link>
+      <div className="flex h-16 items-center gap-2 px-3 sm:px-4">
+        {/* Mobile: open the history drawer. */}
+        <button
+          type="button"
+          onClick={onOpenDrawer}
+          aria-label={strings.history.open}
+          className="grid size-11 place-items-center rounded-xl text-foreground transition-colors hover:bg-surface-muted lg:hidden"
+        >
+          <PanelLeftOpen className="size-5" aria-hidden="true" />
+        </button>
+
+        {/* Desktop: expand the sidebar when it is collapsed. */}
+        {!sidebarOpen && (
+          <button
+            type="button"
+            onClick={onToggleSidebar}
+            aria-label={strings.history.toggle}
+            aria-expanded={sidebarOpen}
+            className="hidden size-11 place-items-center rounded-xl text-foreground transition-colors hover:bg-surface-muted lg:grid"
+          >
+            <PanelLeftOpen className="size-5" aria-hidden="true" />
+          </button>
+        )}
 
         <div className="ml-auto flex items-center gap-2">
           <button
             type="button"
             onClick={onNewChat}
             disabled={!canClear}
-            className="hidden h-11 items-center gap-1.5 rounded-xl border border-border px-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-muted disabled:opacity-40 sm:inline-flex"
-          >
-            <SquarePen className="size-4" aria-hidden="true" />
-            {strings.newChat}
-          </button>
-          <button
-            type="button"
-            onClick={onNewChat}
-            disabled={!canClear}
             aria-label={strings.newChat}
-            className="grid size-11 place-items-center rounded-xl border border-border text-foreground transition-colors hover:bg-surface-muted disabled:opacity-40 sm:hidden"
+            title={strings.newChat}
+            className="grid size-11 place-items-center rounded-xl border border-border text-foreground transition-colors hover:bg-surface-muted disabled:opacity-40"
           >
             <SquarePen className="size-5" aria-hidden="true" />
           </button>

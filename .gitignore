@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# timetable sync progress (local, resumable)
+scripts/.sync-progress.json

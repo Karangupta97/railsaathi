@@ -37,6 +37,28 @@ export type ChatStrings = {
   choicesLabel: string;
   jumpToLatest: string;
   retry: string;
+  languageChangedTo: (lang: string) => string;
+  translate: string;
+  translating: string;
+  showOriginal: string;
+  translatedNote: string;
+  trains: {
+    scheduled: string;
+    departs: string;
+    arrives: string;
+    duration: string;
+    platform: string;
+    plat: string;
+    nextIn: (min: number) => string;
+    departed: string;
+    changeAt: string;
+    serviceTypes: { slow: string; semi_fast: string; fast: string; ac: string };
+    minutes: string;
+    footnote: (source: string, date: string) => string;
+    viewStops: string;
+    hideStops: string;
+    noData: string;
+  };
   errors: {
     offline: string;
     network: string;
@@ -72,6 +94,34 @@ export type ChatStrings = {
     };
   };
   theme: { dark: string };
+  history: {
+    title: string;
+    toggle: string;
+    open: string;
+    close: string;
+    search: string;
+    searchPlaceholder: string;
+    empty: string;
+    noResults: string;
+    notFound: string;
+    notFoundBody: string;
+    deviceOnly: string;
+    storageUnavailable: string;
+    groups: { today: string; yesterday: string; previous7: string; older: string };
+    rowMenu: string;
+    rename: string;
+    delete: string;
+    clearAll: string;
+    save: string;
+    deleted: string;
+    renamed: string;
+    confirmDeleteTitle: string;
+    confirmDeleteBody: string;
+    confirmClearTitle: string;
+    confirmClearBody: string;
+    confirm: string;
+    untitled: string;
+  };
 };
 
 const en: ChatStrings = {
@@ -114,6 +164,28 @@ const en: ChatStrings = {
   choicesLabel: "Choose an option",
   jumpToLatest: "Jump to latest",
   retry: "Retry",
+  languageChangedTo: (lang) => `Language changed to ${lang}`,
+  translate: "Translate",
+  translating: "Translating…",
+  showOriginal: "Show original",
+  translatedNote: "Translated",
+  trains: {
+    scheduled: "Scheduled",
+    departs: "Departs",
+    arrives: "Arrives",
+    duration: "Duration",
+    platform: "Platform",
+    plat: "Plat",
+    nextIn: (min) => (min <= 0 ? "Departing now" : `Next: in ${min} min`),
+    departed: "Departed",
+    changeAt: "Change at",
+    serviceTypes: { slow: "Slow", semi_fast: "Semi-fast", fast: "Fast", ac: "AC" },
+    minutes: "min",
+    footnote: (source, date) => `Scheduled timings, source: ${source}, synced ${date}. Check the station indicator.`,
+    viewStops: "View all stops",
+    hideStops: "Hide stops",
+    noData: "No stop details available.",
+  },
   errors: {
     offline: "You seem to be offline, so I couldn't get an answer.",
     network: "The connection dropped before the answer finished.",
@@ -149,6 +221,34 @@ const en: ChatStrings = {
     },
   },
   theme: { dark: "Dark mode" },
+  history: {
+    title: "Chat history",
+    toggle: "Toggle sidebar",
+    open: "Open chat history",
+    close: "Close chat history",
+    search: "Search chats",
+    searchPlaceholder: "Search chats",
+    empty: "No conversations yet. Start a new chat.",
+    noResults: "No chats match your search.",
+    notFound: "Chat not found",
+    notFoundBody: "This conversation doesn't exist on this device.",
+    deviceOnly: "Chats are saved on this device only.",
+    storageUnavailable: "History can't be saved in this browser.",
+    groups: { today: "Today", yesterday: "Yesterday", previous7: "Previous 7 days", older: "Older" },
+    rowMenu: "Chat options",
+    rename: "Rename",
+    delete: "Delete",
+    clearAll: "Clear all history",
+    save: "Save",
+    deleted: "Chat deleted",
+    renamed: "Chat renamed",
+    confirmDeleteTitle: "Delete this chat?",
+    confirmDeleteBody: "This conversation will be permanently removed from this device.",
+    confirmClearTitle: "Clear all history?",
+    confirmClearBody: "All conversations will be permanently removed from this device.",
+    confirm: "Delete",
+    untitled: "New chat",
+  },
 };
 
 const hi: ChatStrings = {
@@ -191,6 +291,28 @@ const hi: ChatStrings = {
   choicesLabel: "एक विकल्प चुनें",
   jumpToLatest: "नए संदेश पर जाएँ",
   retry: "फिर कोशिश करें",
+  languageChangedTo: (lang) => `भाषा बदलकर ${lang} की गई`,
+  translate: "अनुवाद करें",
+  translating: "अनुवाद हो रहा है…",
+  showOriginal: "मूल दिखाएँ",
+  translatedNote: "अनुवादित",
+  trains: {
+    scheduled: "निर्धारित",
+    departs: "प्रस्थान",
+    arrives: "आगमन",
+    duration: "अवधि",
+    platform: "प्लेटफ़ॉर्म",
+    plat: "प्लेट",
+    nextIn: (min) => (min <= 0 ? "अभी रवाना" : `अगली: ${min} मिनट में`),
+    departed: "रवाना हो चुकी",
+    changeAt: "यहाँ बदलें",
+    serviceTypes: { slow: "स्लो", semi_fast: "सेमी-फास्ट", fast: "फास्ट", ac: "एसी" },
+    minutes: "मिनट",
+    footnote: (source, date) => `निर्धारित समय, स्रोत: ${source}, ${date} को सिंक। स्टेशन इंडिकेटर देखें।`,
+    viewStops: "सभी स्टॉप देखें",
+    hideStops: "स्टॉप छिपाएँ",
+    noData: "स्टॉप विवरण उपलब्ध नहीं।",
+  },
   errors: {
     offline: "आप ऑफ़लाइन लग रहे हैं, इसलिए जवाब नहीं मिल सका।",
     network: "जवाब पूरा होने से पहले कनेक्शन टूट गया।",
@@ -226,6 +348,34 @@ const hi: ChatStrings = {
     },
   },
   theme: { dark: "डार्क मोड" },
+  history: {
+    title: "चैट इतिहास",
+    toggle: "साइडबार टॉगल करें",
+    open: "चैट इतिहास खोलें",
+    close: "चैट इतिहास बंद करें",
+    search: "चैट खोजें",
+    searchPlaceholder: "चैट खोजें",
+    empty: "अभी कोई बातचीत नहीं है। नई चैट शुरू करें।",
+    noResults: "आपकी खोज से कोई चैट मेल नहीं खाती।",
+    notFound: "चैट नहीं मिली",
+    notFoundBody: "यह बातचीत इस डिवाइस पर मौजूद नहीं है।",
+    deviceOnly: "चैट सिर्फ़ इसी डिवाइस पर सहेजी जाती हैं।",
+    storageUnavailable: "इस ब्राउज़र में इतिहास सहेजा नहीं जा सकता।",
+    groups: { today: "आज", yesterday: "कल", previous7: "पिछले 7 दिन", older: "पुराने" },
+    rowMenu: "चैट विकल्प",
+    rename: "नाम बदलें",
+    delete: "हटाएँ",
+    clearAll: "सारा इतिहास साफ़ करें",
+    save: "सहेजें",
+    deleted: "चैट हटा दी गई",
+    renamed: "चैट का नाम बदला गया",
+    confirmDeleteTitle: "यह चैट हटाएँ?",
+    confirmDeleteBody: "यह बातचीत इस डिवाइस से स्थायी रूप से हटा दी जाएगी।",
+    confirmClearTitle: "सारा इतिहास साफ़ करें?",
+    confirmClearBody: "सभी बातचीत इस डिवाइस से स्थायी रूप से हटा दी जाएँगी।",
+    confirm: "हटाएँ",
+    untitled: "नई चैट",
+  },
 };
 
 const mr: ChatStrings = {
@@ -268,6 +418,28 @@ const mr: ChatStrings = {
   choicesLabel: "एक पर्याय निवडा",
   jumpToLatest: "नवीन संदेशाकडे जा",
   retry: "पुन्हा प्रयत्न करा",
+  languageChangedTo: (lang) => `भाषा ${lang} मध्ये बदलली`,
+  translate: "भाषांतर करा",
+  translating: "भाषांतर होत आहे…",
+  showOriginal: "मूळ दाखवा",
+  translatedNote: "भाषांतरित",
+  trains: {
+    scheduled: "नियोजित",
+    departs: "प्रस्थान",
+    arrives: "आगमन",
+    duration: "कालावधी",
+    platform: "प्लॅटफॉर्म",
+    plat: "प्लॅट",
+    nextIn: (min) => (min <= 0 ? "आत्ता सुटत आहे" : `पुढची: ${min} मिनिटांत`),
+    departed: "सुटली",
+    changeAt: "येथे बदला",
+    serviceTypes: { slow: "स्लो", semi_fast: "सेमी-फास्ट", fast: "फास्ट", ac: "एसी" },
+    minutes: "मिनिटे",
+    footnote: (source, date) => `नियोजित वेळा, स्रोत: ${source}, ${date} रोजी सिंक. स्टेशन इंडिकेटर पाहा.`,
+    viewStops: "सर्व थांबे पाहा",
+    hideStops: "थांबे लपवा",
+    noData: "थांब्यांचा तपशील उपलब्ध नाही.",
+  },
   errors: {
     offline: "तुम्ही ऑफलाइन आहात असे दिसते, त्यामुळे उत्तर मिळाले नाही.",
     network: "उत्तर पूर्ण होण्याआधी कनेक्शन तुटले.",
@@ -303,6 +475,34 @@ const mr: ChatStrings = {
     },
   },
   theme: { dark: "डार्क मोड" },
+  history: {
+    title: "चॅट इतिहास",
+    toggle: "साइडबार टॉगल करा",
+    open: "चॅट इतिहास उघडा",
+    close: "चॅट इतिहास बंद करा",
+    search: "चॅट शोधा",
+    searchPlaceholder: "चॅट शोधा",
+    empty: "अजून कोणतेही संभाषण नाही. नवीन चॅट सुरू करा.",
+    noResults: "तुमच्या शोधाशी जुळणारी चॅट नाही.",
+    notFound: "चॅट सापडली नाही",
+    notFoundBody: "हे संभाषण या डिव्हाइसवर अस्तित्वात नाही.",
+    deviceOnly: "चॅट फक्त याच डिव्हाइसवर जतन केल्या जातात.",
+    storageUnavailable: "या ब्राउझरमध्ये इतिहास जतन करता येत नाही.",
+    groups: { today: "आज", yesterday: "काल", previous7: "मागील 7 दिवस", older: "जुने" },
+    rowMenu: "चॅट पर्याय",
+    rename: "नाव बदला",
+    delete: "हटवा",
+    clearAll: "संपूर्ण इतिहास साफ करा",
+    save: "जतन करा",
+    deleted: "चॅट हटवली",
+    renamed: "चॅटचे नाव बदलले",
+    confirmDeleteTitle: "ही चॅट हटवायची?",
+    confirmDeleteBody: "हे संभाषण या डिव्हाइसवरून कायमचे काढून टाकले जाईल.",
+    confirmClearTitle: "संपूर्ण इतिहास साफ करायचा?",
+    confirmClearBody: "सर्व संभाषणे या डिव्हाइसवरून कायमची काढून टाकली जातील.",
+    confirm: "हटवा",
+    untitled: "नवीन चॅट",
+  },
 };
 
 export const CHAT_STRINGS: Readonly<Record<LanguageCode, ChatStrings>> = { en, hi, mr };
